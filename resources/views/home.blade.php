@@ -1,18 +1,16 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="row mt-3 ps-4">
-        <div class="col-8">
-            <div class="mt-2">
-                <nav aria-label="breadcrumb mt-3">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Home</li>
                     </ol>
                 </nav>
+                <h1 class="mt-3">Welcome to Amazing Apps</h1>
             </div>
-            <h1>Welcome to Amazing Apps</h1>
         </div>
-        <div class="col-2"></div>
-        <div class="col-2"></div>
     </div>
 @endsection
