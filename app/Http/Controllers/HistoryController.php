@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\History;
+use Illuminate\Support\Facades\Gate;
 
 class HistoryController extends Controller
 {
     public function index()
     {
+        if (Gate::denies('admin-only')) {
+            abort(403, 'Akses hanya untuk admin');
+        }
         $active = 'motor';
         $histories = History::all();
         return view('motor.index', compact('histories', 'active'));
@@ -16,6 +20,9 @@ class HistoryController extends Controller
 
     public function store(Request $request)
     {
+        if (Gate::denies('admin-only')) {
+            abort(403, 'Akses hanya untuk admin');
+        }
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required|max:255',
