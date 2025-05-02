@@ -60,9 +60,9 @@
                         </form>
                     @endauth
 
-                    @guest
+                    {{-- @guest
                         <a href="{{ route('login') }}" class="btn btn-primary w-100">Login</a>
-                    @endguest
+                    @endguest --}}
                 </div>
 
             </div>
